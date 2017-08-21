@@ -54,8 +54,9 @@ def login():
 @user_routes.route('/logout', methods=('GET', 'POST'))
 def logout():
     session.pop('username')
-    return redirect(url_for('user_app.login'))
+    return redirect(url_for('user_routes.login'))
 
-@user_routes.route('/profile', methods=('GET', 'POST'))
-def profile():
-    return render_template('user/profile.html')
+@user_routes.route('/<username>', methods=('GET', 'POST'))
+def profile(username):
+    user = User.objects.filter(username=username).first()
+    return render_template('user/profile.html', user=user)
