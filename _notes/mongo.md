@@ -13,5 +13,20 @@
 ## Show Index
     > db.user.getIndexes()
     
-## 
+## Mongo query details
     > db.user.find().explain()
+    
+## Restart mongo
+    Create mongo_restart script
+    
+    rm -fr ~/data/mongod.lock
+    
+    mognod -f mongod.conf
+    
+    chmod 755 mongo_restart
+    
+## Mongo Query
+    user = User.objects.filter( username=form.username.data ).first()
+    
+    
+    

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, session
+from flask import Blueprint, render_template, request, redirect, session, url_for
 import bcrypt
 
 from user.models import User
@@ -50,3 +50,12 @@ def login():
         if not user:
             error = 'Incorrect credentials'
     return render_template('user/login.html', form=form, error=error)
+
+@user_routes.route('/logout', methods=('GET', 'POST'))
+def logout():
+    session.pop('username')
+    return redirect(url_for('user_app.login'))
+
+@user_routes.route('/profile', methods=('GET', 'POST'))
+def profile():
+    return render_template('user/profile.html')
