@@ -9,3 +9,5 @@
 ## Run
     $python manager.py run
     
+## Testing
+    
