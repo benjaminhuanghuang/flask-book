@@ -1,4 +1,4 @@
-from application import create_app as create_app_base
+from app import create_app as create_app_base
 from mongoengine.connection import _get_db
 import unittest
 from flask import session
