@@ -21,7 +21,7 @@ class UserTest(unittest.TestCase):
 
     def tearDown(self):
         db = _get_db()
-        db.connection.drop_database(db)
+        db.client.drop_database(db)
 
     def user_dict(self):
         return dict(

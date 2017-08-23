@@ -76,6 +76,10 @@
     
     is_completed = db.BooleanField(default=False)
     
+    status = db.IntField(db_field='s', choices=STATUS_TYPE)
+    
+    from_user = db.ReferenceField(User, db_field="fu", reverse_delete_rule=CASCADE)
+    
 ## MongoEngine Query
     - Create
         todo1 = Todo(task='task 1', is_completed=False)
@@ -100,11 +104,4 @@
         todos = Todo.objects.paginate(page=page, per_page=10)
 
         todos = Todo.objects().order_by('-create_at').skip(skip_num)).limit(limit)
-    
-    
-## Relationship models
-
-
-## 
-    from_user = db.ReferenceField(User, db_field='fu', reverse_delete_rule=CASCADE)
     

@@ -22,7 +22,7 @@ class FeedTest(unittest.TestCase):
         
     def tearDown(self):
         db = _get_db()
-        db.connection.drop_database(db)
+        db.client.drop_database(db)
         
     def user1_dict(self):
         return dict(

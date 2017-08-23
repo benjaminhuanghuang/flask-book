@@ -15,7 +15,7 @@
 ## Dependencies
     - Flask==0.10.1
     - Flask-Script==2.0.5
-    - flask-mongoengine==0.7.4
+    - flask-mongoengine==0.9.3
     - Flask-WTF==0.12
     - py-bcrypt==0.4         # encrypt the password
     - blinker==1.4           # Blinker provides fast & simple object-to-object and broadcast signaling for Python objects
@@ -38,4 +38,5 @@
     brew link imagemagick@6 --force    # fix error ImportError: MagickWand shared library not found.
     
     - unrecognized write concern field: write_concern
-        
+    - pymongo.errors.OperationFailure: cannot use 'w' > 1 when a host is not replicated
+     rm and recreate venv and re pip install    

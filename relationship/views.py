@@ -74,6 +74,8 @@ def remove_friend(to_username):
         to_username = to_user.username
         if rel == "FRIENDS_PENDING" or rel == "FRIENDS_APPROVED" or rel == "REVERSE_FRIENDS_PENDING":
             rel = Relationship.objects.filter(from_user=logged_user, to_user=to_user).delete()
+            # cannot use 'w' > 1 when a host is not replicated
+            # rel = Relationship.objects.filter(from_user=logged_user, to_user=to_user).delete(write_concern={'w':2})
             reverse_rel = Relationship.objects.filter(from_user=to_user, to_user=logged_user).delete()
         if ref:
             return redirect(ref)

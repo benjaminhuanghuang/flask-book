@@ -23,7 +23,7 @@ class RelationshipTest(unittest.TestCase):
 
     def tearDown(self):
         db = _get_db()
-        db.connection.drop_database(db)
+        db.client.drop_database(db)
 
     def user1_dict(self):
         return dict(
@@ -87,8 +87,7 @@ class RelationshipTest(unittest.TestCase):
         assert relcount == 2
 
         # user2 now unfriends user1
-        rv = self.app.get('/remove_friend/' + self.user1_dict()['username'],
-                          follow_redirects=True)
+        rv = self.app.get('/remove_friend/' + self.user1_dict()['username'], follow_redirects=True)
         assert "relationship-add-friend" in str(rv.data)
 
         # check that no records exist at this point
