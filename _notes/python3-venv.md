@@ -11,3 +11,17 @@
    
 ## Install package
    $ pip install -r requirements.txt
+   
+## Dependencies
+    - Flask==0.10.1
+    - Flask-Script==2.0.5
+    - flask-mongoengine==0.7.4
+    - Flask-WTF==0.12
+    - py-bcrypt==0.4         # encrypt the password
+    - blinker==1.4           # Blinker provides fast & simple object-to-object and broadcast signaling for Python objects
+    - boto3==1.3.0           # AWS sdk for python (common.py)
+    - Wand==0.4.2            # Image processing  
+    - Arrow==0.8.0           # datetime formatting and converting   
+    - bleach==1.4.3          # HTML sanitizing library that escapes or strips markup and attributes. (commpon.py)
+    
+     brew install freetype imagemagick  # for MagickWand

@@ -1,3 +1,9 @@
 SECRET_KEY = "my-secret"
 DEBUG = True
 MONGODB_DB = "flaskbook"
+HOSTNAME = 'https://yourapp-youruser.c9users.io'
+UPLOAD_FOLDER = '/home/ubuntu/workspace/flaskbook/static/images'
+STATIC_IMAGE_URL = 'images'
+AWS_BUCKET = ''
+AWS_CONTENT_URL = ''
+AWS_SEND_MAIL = False

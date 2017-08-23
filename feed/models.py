@@ -2,7 +2,7 @@ from mongoengine import CASCADE
 from flask import url_for
 import os
 
-from application import db
+from app import db
 from utilities.common import utc_now_ts_ms as now
 from user.models import User
 from utilities.common import linkify, ms_stamp_humanize
