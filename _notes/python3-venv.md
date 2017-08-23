@@ -25,8 +25,14 @@
     - bleach==1.4.3          # HTML sanitizing library that escapes or strips markup and attributes. (commpon.py)
     
     
-     brew install freetype imagemagick  # for MagickWand
+ ## Trouble shooting
+    - FlaskWTFDeprecationWarning: The "FileField" subclass is no longer necessary and will be removed in 1.0. 
+    Use Flask-WTF==0.14.1
     
-     brew unlink imagemagick            # Wand doesn't support imagemagick 7
+    - ImportError: MagickWand shared library not found.
     
-     brew link imagemagick@6 --force    # fix error ImportError: MagickWand shared library not found.
+    brew install freetype imagemagick  # for MagickWand
+    
+    brew unlink imagemagick            # Wand doesn't support imagemagick 7
+    
+    brew link imagemagick@6 --force    # fix error ImportError: MagickWand shared library not found.

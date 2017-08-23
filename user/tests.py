@@ -56,7 +56,7 @@ class UserTest(unittest.TestCase):
 
     def test_edit_profile(self):
         # create a user
-        self.app.post('/register', data=self.user_dict())\
+        self.app.post('/register', data=self.user_dict())
         # login the user
         rv = self.app.post('/login', data=dict(
             username=self.user_dict()['username'],
