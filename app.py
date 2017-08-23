@@ -15,4 +15,13 @@ def create_app(**config_overrides):
     from user.routes import user_routes
     app.register_blueprint(user_routes)
 
+    from relationship.views import relationship_app
+    app.register_blueprint(relationship_app)
+
+    from feed.views import feed_app
+    app.register_blueprint(feed_app)
+
+    from home.routes import home_routes
+    app.register_blueprint(home_routes)
+
     return app

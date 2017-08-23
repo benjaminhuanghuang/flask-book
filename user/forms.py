@@ -1,4 +1,4 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import validators, StringField, PasswordField
 from wtforms.widgets import TextArea
 from wtforms.fields.html5 import EmailField
@@ -8,7 +8,7 @@ import re
 
 from user.models import User
 
-class BaseUserForm(Form):
+class BaseUserForm(FlaskForm):
     first_name = StringField('First Name', [validators.DataRequired()])
     last_name = StringField('Last Name', [validators.DataRequired()])
     email = EmailField('Email address', [
@@ -25,7 +25,7 @@ class BaseUserForm(Form):
         validators=[validators.Length(max=160)]
     )
 
-class PasswordBaseForm(Form):
+class PasswordBaseForm(FlaskForm):
     password = PasswordField('New Password', [
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords must match'),
@@ -45,7 +45,7 @@ class RegisterForm(BaseUserForm, PasswordBaseForm):
         if User.objects.filter(email=field.data).first():
             raise ValidationError("Email is already in use")
 
-class LoginForm(Form):
+class LoginForm(FlaskForm):
     username = StringField('Username', [
         validators.DataRequired(),
         validators.length(min=4, max=25)
@@ -61,7 +61,7 @@ class EditForm(BaseUserForm):
         'Only JPEG, PNG and GIFs allowed')
         ])
 
-class ForgotForm(Form):
+class ForgotForm(FlaskForm):
     email = EmailField('Email address',
         [validators.DataRequired(), validators.Email()]
     )

@@ -42,7 +42,7 @@ def register():
         email(user.email, "Welcome to Flaskbook", body_html, body_text)
 
         user.save()
-        return redirect(url_for('home_app.home'))
+        return redirect(url_for('home_routes.home'))
     return render_template('user/register.html', form=form)
 
 @user_routes.route('/login', methods=('GET', 'POST'))
@@ -65,7 +65,7 @@ def login():
                     session.pop('next')
                     return redirect(next)
                 else:
-                    return redirect(url_for('home_app.home'))
+                    return redirect(url_for('home_routes.home'))
             else:
                 user = None
         if not user:

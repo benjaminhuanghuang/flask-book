@@ -24,4 +24,9 @@
     - Arrow==0.8.0           # datetime formatting and converting   
     - bleach==1.4.3          # HTML sanitizing library that escapes or strips markup and attributes. (commpon.py)
     
+    
      brew install freetype imagemagick  # for MagickWand
+    
+     brew unlink imagemagick            # Wand doesn't support imagemagick 7
+    
+     brew link imagemagick@6 --force    # fix error ImportError: MagickWand shared library not found.

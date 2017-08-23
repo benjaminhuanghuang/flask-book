@@ -30,3 +30,8 @@
     
     
 ## Relationship models
+
+
+## 
+    from_user = db.ReferenceField(User, db_field='fu', reversed_delete_rule=CASCADE)
+    
