@@ -56,7 +56,7 @@ def add_friend(to_username):
         if ref:
             return redirect(ref)
         else:
-            return redirect(url_for('user_app.profile', username=to_user.username))
+            return redirect(url_for('user_routes.profile', username=to_user.username))
     else:
         abort(404)
         
@@ -80,7 +80,7 @@ def remove_friend(to_username):
         if ref:
             return redirect(ref)
         else:
-            return redirect(url_for('user_app.profile', username=to_user.username))
+            return redirect(url_for('user_routes.profile', username=to_user.username))
     else:
         abort(404)
 
@@ -111,7 +111,7 @@ def block(to_username):
         if ref:
             return redirect(ref)
         else:
-            return redirect(url_for('user_app.profile', username=to_user.username))
+            return redirect(url_for('user_routes.profile', username=to_user.username))
 
     else:
         abort(404)
@@ -134,7 +134,7 @@ def unblock(to_username):
         if ref:
             return redirect(ref)
         else:
-            return redirect(url_for('user_app.profile', username=to_user.username))
+            return redirect(url_for('user_routes.profile', username=to_user.username))
 
     else:
         abort(404)
