@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, session, url_fo
 import bcrypt
 import uuid
 import os
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 from mongoengine import Q
 
 from user.models import User
