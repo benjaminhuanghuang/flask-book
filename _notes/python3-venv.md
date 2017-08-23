@@ -36,3 +36,6 @@
     brew unlink imagemagick            # Wand doesn't support imagemagick 7
     
     brew link imagemagick@6 --force    # fix error ImportError: MagickWand shared library not found.
+    
+    - unrecognized write concern field: write_concern
+        
